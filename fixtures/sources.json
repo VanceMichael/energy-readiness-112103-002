@@ -1,9 +1,156 @@
 {
   "sources": [
-    {"source_id": "meter-feed-a", "record_kind": "telemetry", "collected_at": "2026-12-18T05:20:00+08:00", "payload": {"asset_id": "HT-041", "metric": "outlet_temperature", "value": 72.4, "unit": "C", "observed_at": "2026-12-18T05:00:00+08:00", "revision": 3}},
-    {"source_id": "field-check-a", "record_kind": "inspection", "collected_at": "2026-12-18T05:31:00+08:00", "payload": {"asset_id": "HT-041", "check_id": "CHK-912", "condition": "valve-noise", "observed_at": "2026-12-18T05:14:00+08:00", "crew": "C-08"}},
-    {"source_id": "weather-forecast-b", "record_kind": "weather_alert", "collected_at": "2026-12-18T05:35:00+08:00", "payload": {"area": "NORTH-3", "starts_at": "2026-12-18T06:00:00+08:00", "ends_at": "2026-12-18T14:00:00+08:00", "alert": "ice-risk", "revision": 2}},
-    {"source_id": "field-check-b", "record_kind": "inspection", "collected_at": "2026-12-18T05:42:00+08:00", "payload": {"asset_id": "HT-052", "check_id": "CHK-913", "condition": "normal", "observed_at": "2026-12-18T05:20:00+08:00", "crew": "C-11"}},
-    {"source_id": "dispatch-a", "record_kind": "dispatch", "collected_at": "2026-12-18T05:53:00+08:00", "payload": {"dispatch_id": "DSP-220", "asset_id": "HT-041", "crew": "C-08", "state": "assigned", "basis_revision": 2}}
+    {
+      "source_id": "meter-feed-a",
+      "record_kind": "telemetry",
+      "collected_at": "2026-12-18T05:20:00+08:00",
+      "payload": {
+        "asset_id": "HT-041",
+        "metric": "outlet_temperature",
+        "value": 72.4,
+        "unit": "C",
+        "observed_at": "2026-12-18T05:00:00+08:00",
+        "revision": 3
+      }
+    },
+    {
+      "source_id": "field-check-a",
+      "record_kind": "inspection",
+      "collected_at": "2026-12-18T05:31:00+08:00",
+      "payload": {
+        "asset_id": "HT-041",
+        "check_id": "CHK-912",
+        "condition": "valve-noise",
+        "observed_at": "2026-12-18T05:14:00+08:00",
+        "crew": "C-08"
+      }
+    },
+    {
+      "source_id": "weather-forecast-b",
+      "record_kind": "weather_alert",
+      "collected_at": "2026-12-18T05:35:00+08:00",
+      "payload": {
+        "area": "NORTH-3",
+        "starts_at": "2026-12-18T06:00:00+08:00",
+        "ends_at": "2026-12-18T14:00:00+08:00",
+        "alert": "ice-risk",
+        "revision": 2
+      }
+    },
+    {
+      "source_id": "field-check-b",
+      "record_kind": "inspection",
+      "collected_at": "2026-12-18T05:42:00+08:00",
+      "payload": {
+        "asset_id": "HT-052",
+        "check_id": "CHK-913",
+        "condition": "normal",
+        "observed_at": "2026-12-18T05:20:00+08:00",
+        "crew": "C-11"
+      }
+    },
+    {
+      "source_id": "dispatch-a",
+      "record_kind": "dispatch",
+      "collected_at": "2026-12-18T05:53:00+08:00",
+      "payload": {
+        "dispatch_id": "DSP-220",
+        "asset_id": "HT-041",
+        "crew": "C-08",
+        "state": "assigned",
+        "basis_source_id": "meter-feed-a",
+        "basis_revision": 3
+      }
+    },
+    {
+      "source_id": "meter-feed-a-r4",
+      "record_kind": "telemetry",
+      "collected_at": "2026-12-18T06:18:00+08:00",
+      "supersedes": "meter-feed-a",
+      "payload": {
+        "asset_id": "HT041",
+        "metric": "outlet_temperature",
+        "value": 77,
+        "unit": "degC",
+        "observed_at": "2026-12-18T06:02:00+08:00",
+        "revision": 4,
+        "note": "现场复测修正，取词表旧单位与旧设备编号"
+      }
+    },
+    {
+      "source_id": "meter-feed-b",
+      "record_kind": "telemetry",
+      "collected_at": "2026-12-18T05:58:00+08:00",
+      "payload": {
+        "asset_id": "GS107",
+        "metric": "outlet_pressure",
+        "value": 2.34,
+        "unit": "bar",
+        "observed_at": "2026-12-18T05:45:00+08:00",
+        "revision": 1
+      }
+    },
+    {
+      "source_id": "field-check-c",
+      "record_kind": "inspection",
+      "collected_at": "2026-12-18T06:05:00+08:00",
+      "payload": {
+        "asset_id": "LN220",
+        "check_id": "CHK-914",
+        "condition": "normal",
+        "observed_at": "2026-12-18T05:57:00+08:00",
+        "crew": "C-14"
+      }
+    },
+    {
+      "source_id": "weather-forecast-e",
+      "record_kind": "weather_alert",
+      "collected_at": "2026-12-18T06:12:00+08:00",
+      "payload": {
+        "area": "EAST02",
+        "starts_at": "2026-12-18T09:00:00+08:00",
+        "ends_at": "2026-12-18T18:00:00+08:00",
+        "alert": "heavy-snow",
+        "revision": 1
+      }
+    },
+    {
+      "source_id": "meter-feed-d",
+      "record_kind": "telemetry",
+      "collected_at": "2026-12-18T06:25:00+08:00",
+      "payload": {
+        "asset_id": "LN-220",
+        "metric": "line_pressure",
+        "value": 0.41,
+        "unit": "MPa",
+        "observed_at": "2026-12-18T06:15:00+08:00",
+        "revision": 1
+      }
+    },
+    {
+      "source_id": "dispatch-b",
+      "record_kind": "dispatch",
+      "collected_at": "2026-12-18T06:27:00+08:00",
+      "payload": {
+        "dispatch_id": "DSP-221",
+        "asset_id": "LN-220",
+        "crew": "C-14",
+        "state": "assigned",
+        "basis_revision": 1
+      }
+    },
+    {
+      "source_id": "meter-feed-legacy",
+      "record_kind": "telemetry",
+      "collected_at": "2026-12-18T06:22:00+08:00",
+      "payload": {
+        "asset_id": "HT-041A",
+        "metric": "outlet_temperature",
+        "value": 71.8,
+        "unit": "C",
+        "observed_at": "2026-12-18T06:10:00+08:00",
+        "revision": 1
+      }
+    }
   ]
 }

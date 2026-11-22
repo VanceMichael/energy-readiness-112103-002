@@ -1,0 +1,160 @@
+{
+  "default_timezone": "+08:00",
+  "defaults": {
+    "telemetry_max_age_minutes": 90,
+    "telemetry_report_lag_minutes": 45,
+    "inspection_max_age_minutes": 480,
+    "inspection_report_lag_minutes": 180,
+    "weather_report_lag_minutes": 240,
+    "dispatch_report_lag_minutes": 1440
+  },
+  "areas": [
+    {"area_id": "NORTH-3", "name": "北三片区", "aliases": ["NORTH-03", "北三"]},
+    {"area_id": "EAST-2", "name": "东二片区", "aliases": ["EAST-02", "东二"]},
+    {"area_id": "SOUTH-1", "name": "南一燃气片区", "aliases": ["SOUTH-01", "南一"]}
+  ],
+  "assets": [
+    {
+      "asset_id": "HT-041",
+      "name": "北三供热站 1 号机组",
+      "kind": "heating_station",
+      "area_id": "NORTH-3",
+      "aliases": ["HT-41", "HT041", "N3-HT-1", "北三站-1号机组"],
+      "inspection_interval_minutes": 480,
+      "telemetry_max_age_minutes": 90,
+      "metrics": {
+        "outlet_temperature": {
+          "label": "出口温度",
+          "quantity": "temperature",
+          "unit": "C",
+          "normal_min": 55,
+          "normal_max": 85,
+          "watch_high": 88,
+          "alert_high": 92,
+          "maintenance": {
+            "label": "检修口径",
+            "normal_min": 50,
+            "normal_max": 70,
+            "watch_high": 72,
+            "alert_high": 75
+          },
+          "telemetry_cadence_minutes": 30
+        }
+      }
+    },
+    {
+      "asset_id": "HT-052",
+      "name": "北三供热站 2 号机组",
+      "kind": "heating_station",
+      "area_id": "NORTH-3",
+      "aliases": ["HT-52", "HT052", "N3-HT-2", "北三站-2号机组"],
+      "inspection_interval_minutes": 480,
+      "telemetry_max_age_minutes": 90,
+      "metrics": {
+        "outlet_temperature": {
+          "label": "出口温度",
+          "quantity": "temperature",
+          "unit": "C",
+          "normal_min": 60,
+          "normal_max": 90,
+          "watch_high": 92,
+          "alert_high": 96,
+          "telemetry_cadence_minutes": 30
+        }
+      }
+    },
+    {
+      "asset_id": "GS-107",
+      "name": "南一调压站",
+      "kind": "gas_regulator",
+      "area_id": "SOUTH-1",
+      "aliases": ["GS107", "南一调压站"],
+      "inspection_interval_minutes": 240,
+      "telemetry_max_age_minutes": 60,
+      "metrics": {
+        "outlet_pressure": {
+          "label": "出口压力",
+          "quantity": "pressure",
+          "unit": "kPa",
+          "normal_min": 180,
+          "normal_max": 260,
+          "watch_high": 280,
+          "alert_high": 300,
+          "telemetry_cadence_minutes": 15
+        }
+      }
+    },
+    {
+      "asset_id": "LN-220",
+      "name": "东二联络管线",
+      "kind": "pipeline",
+      "area_id": "EAST-2",
+      "aliases": ["LN220", "东二联络线"],
+      "inspection_interval_minutes": 360,
+      "telemetry_max_age_minutes": 60,
+      "metrics": {
+        "line_pressure": {
+          "label": "管线压力",
+          "quantity": "pressure",
+          "unit": "kPa",
+          "normal_min": 300,
+          "normal_max": 450,
+          "watch_high": 480,
+          "alert_high": 520,
+          "telemetry_cadence_minutes": 15
+        }
+      }
+    }
+  ],
+  "maintenance": [
+    {
+      "event_id": "MNT-310",
+      "asset_id": "HT-041",
+      "started_at": "2026-12-18T04:00:00+08:00",
+      "ended_at": "2026-12-18T07:00:00+08:00",
+      "status": "in_progress",
+      "profile": "maintenance",
+      "label": "1 号机组阀门检修",
+      "note": "检修期间同一测温值的风险阈值收紧。"
+    }
+  ],
+  "condition_severity": {
+    "normal": "normal",
+    "valve-noise": "watch",
+    "vibration": "watch",
+    "ice": "alert",
+    "leak": "alert",
+    "overheat": "alert",
+    "pressure-loss": "alert",
+    "smoke": "alert"
+  },
+  "condition_labels": {
+    "normal": "未见异常",
+    "valve-noise": "阀门异响",
+    "vibration": "振动偏大",
+    "ice": "结冰",
+    "leak": "泄漏",
+    "overheat": "过热",
+    "pressure-loss": "失压",
+    "smoke": "冒烟"
+  },
+  "alert_severity": {
+    "ice-risk": "watch",
+    "freeze": "alert",
+    "heavy-snow": "watch",
+    "storm": "alert",
+    "wind": "watch"
+  },
+  "alert_labels": {
+    "ice-risk": "道路结冰风险",
+    "freeze": "严寒预警",
+    "heavy-snow": "暴雪预警",
+    "storm": "风暴预警",
+    "wind": "大风预警"
+  },
+  "asset_kind_labels": {
+    "heating_station": "供热站",
+    "gas_regulator": "燃气设施",
+    "pipeline": "管线"
+  }
+}
